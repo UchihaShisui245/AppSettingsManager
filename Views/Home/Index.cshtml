@@ -1,8 +1,30 @@
-﻿@{
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration config
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.SendGridkey</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.TwilloSampleKey</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.TwilloSampleValue</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.TwilloPhoneNumber</h1>
+
+    <h1 class="display-4" style="color:red">@ViewBag.TwilloSampleKeySection</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.TwilloSampleValueSection</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.TwilloSamplePhoneNumberSection</h1>
+
+    <h1 class="display-4" style="color:red">@ViewBag.InnerLastsection</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.InnerLastsectionSample</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.InnerLastsectionSampleGetSection</h1>
+
+
+    <h1 class="display-4" style="color:red">@ViewBag.FaceBookKey</h1>
+    <h1 class="display-4" style="color:red">@ViewBag.GoogleKey</h1>
+
+    <h1>Inject Method :-</h1>
+
+    <h1 class="display-4" style="color:red">@config.GetSection("FirstLevelSettings").GetSection("SecondLevelSettings").GetSection("LastLevelSettings").Value</h1>
+
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
